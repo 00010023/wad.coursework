@@ -1,0 +1,18 @@
+﻿using ChoparPizza.Domain.Entities.Orders;
+using ChoparPizza.Domain.Entities.Pizzas;
+using ChoparPizza.Domain.Entities.Users;
+using Microsoft.EntityFrameworkCore;
+
+namespace ChoparPizza.Data.Contexts
+{
+    public class BellisimoDbContext : DbContext
+    {
+        public BellisimoDbContext(DbContextOptions<BellisimoDbContext> options) : base(options)
+        {
+        }
+
+        public virtual DbSet<Order> Orders { get; set; }
+        public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<Pizza> Pizzas { get; set; }
+    }
+}
